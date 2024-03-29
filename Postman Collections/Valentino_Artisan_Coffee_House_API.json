@@ -1,0 +1,749 @@
+{
+	"info": {
+		"_postman_id": "103f7f0d-2518-4211-9596-9b35fff6faab",
+		"name": "Valentino Artisan Coffee House API",
+		"description": "An API for managing orders and products at a coffee place named Valentino's Artisan Coffee House.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "status",
+			"item": [
+				{
+					"name": "Get API status",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "87dcf18c-055e-436c-977a-58670393c04c",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "57d19bac-0d46-4e22-9752-5043d66ef8b3",
+								"exec": [
+									"// Assignment #1 Task 1\r",
+									"// Add to the request \"Get API status\" a Postman test that verifies the status is 200.\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Assignment #2 Task 1\r",
+									"// Using pm.expect() write a status code test for all the requests in the collection.\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.code).to.eql(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "962a18d2-3833-4f8e-b684-2b72ec460797",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/status",
+						"description": "Retrieve the current status of the API"
+					},
+					"response": [
+						{
+							"id": "a7de6d05-bfe3-4a6a-8891-74c1cd38ba23",
+							"name": "API status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/status"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"enabled": true
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"status\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "8f2c0dea-c9d9-47f2-b4aa-af43bb391915",
+			"description": "Get the status of the API."
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "Get all products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fb6d2544-b33f-4a17-98a7-55d8e26ba8e8",
+								"exec": [
+									"// Assignment #2 Task 1\r",
+									"// Using pm.expect() write a status code test for all the requests in the collection.\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.code).to.eql(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "20c52560-9769-4f90-b2a6-94566de40bfb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"description": "The page number to fetch",
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "cookie",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Retrieve a paginated list of products, 10 products per page"
+					},
+					"response": [
+						{
+							"id": "1821ef6a-d776-4dc3-a515-ca3bf8c858a0",
+							"name": "A list of products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products?page=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"description": "The page number to fetch",
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"enabled": true
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"category\": \"<string>\",\n    \"name\": \"<string>\",\n    \"isAvailable\": \"<boolean>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"category\": \"<string>\",\n    \"name\": \"<string>\",\n    \"isAvailable\": \"<boolean>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get single product",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a3b51183-a6f5-466a-9d97-6f6cd6718710",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "0cb74168-630c-485e-8116-f07f9cf01f1b",
+								"exec": [
+									"// Assignment #1 Task 2\r",
+									"// Add to the request \"Get single product\" a script that parses the JSON response body. \r",
+									"const response = pm.response.json();\r",
+									"// Log the value of the property \"product-description\" to the Postman console.\r",
+									"console.log(response[\"product-description\"]);\r",
+									"\r",
+									"// Assignment #2 Task 1\r",
+									"// Using pm.expect() write a status code test for all the requests in the collection.\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.code).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"// Assignment #4 Task 1\r",
+									"// The JSON schema expects that the response is an object.\r",
+									"const schema = {\r",
+									"    type: 'object',\r",
+									"    properties: {\r",
+									"        \"id\": {\r",
+									"            type: 'number'\r",
+									"        },\r",
+									"        \"category\": {\r",
+									"            type: 'string'\r",
+									"        },\r",
+									"        \"name\": {\r",
+									"            type: 'string'\r",
+									"        },\r",
+									"        \"isAvailable\": {\r",
+									"            type: 'boolean'\r",
+									"        },\r",
+									"        \"product-description\": {\r",
+									"            type: 'string'\r",
+									"        },\r",
+									"        \"additionalText\": {\r",
+									"            type: 'string'\r",
+									"        }\r",
+									"    },\r",
+									"    // Assignment #4 Task 2\r",
+									"    // Expand the JSON schema and ensure that all properties present in the response body are required.\r",
+									"    required: [\"id\",\"category\",\"name\",\"isAvailable\",\"product-description\",\"additionalText\"],\r",
+									"    // Assignment #4 Task 3\r",
+									"    // Expand the JSON schema and ensure that no additional properties are allowed.\r",
+									"    additionalProperties: false\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Schema is valid\", function(){\r",
+									"    pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "5c4e7d53-f62c-469a-b11c-479c8c0b0791",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/products/:productId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "{{productId}}"
+								}
+							]
+						},
+						"description": "Retrieve a single product by specifying the product ID."
+					},
+					"response": [
+						{
+							"id": "2cb64f6d-87b5-4e02-9111-bad6130c79b3",
+							"name": "A list of products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products?page=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"description": "The page number to fetch",
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"enabled": true
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"category\": \"<string>\",\n    \"name\": \"<string>\",\n    \"isAvailable\": \"<boolean>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"category\": \"<string>\",\n    \"name\": \"<string>\",\n    \"isAvailable\": \"<boolean>\"\n  }\n]"
+						}
+					]
+				}
+			],
+			"id": "d7adb077-c213-4d33-814d-42adc06127d8"
+		},
+		{
+			"name": "clients",
+			"item": [
+				{
+					"name": "Register a new client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3baad36b-1e40-478d-a83f-43cf4f1ff188",
+								"exec": [
+									"// Assignment #2 Task 1\r",
+									"// Using pm.expect() write a status code test for all the requests in the collection.\r",
+									"const response = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.code).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"pm.collectionVariables.set(\"apiKey\", response.token);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "b789b9b6-32c1-48c3-97d9-02e394e9ed29",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{$randomExampleEmail}}\"\n}"
+						},
+						"url": "{{baseUrl}}/clients",
+						"description": "Register a new API client by providing an email address"
+					},
+					"response": [
+						{
+							"id": "3bba8bb2-27f2-41db-9b6a-2ee4c5575cfc",
+							"name": "Client registered",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"<email>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/clients"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"enabled": true
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"value\": \"reference #/components/schemas/ApiClient not found in the OpenAPI spec\"\n}"
+						}
+					]
+				}
+			],
+			"id": "305900ae-37d4-46e5-9ff1-259bcd6f0cca"
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "Create a new order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "85471839-6f0c-4fd4-af5d-149160cb7fed",
+								"exec": [
+									"// Assignment #1 Task 3\r",
+									"// Add to the request \"Create a new order\" a script that parses the JSON response body\r",
+									"const response = pm.response.json();\r",
+									"// Sets a Postman variable named orderId with the id of the order that was just created.\r",
+									"pm.collectionVariables.set('orderID', response.id);\r",
+									"\r",
+									"// Assignment #2 Task 1\r",
+									"// Using pm.expect() write a status code test for all the requests in the collection.\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    pm.expect(pm.response.code).to.eql(201);\r",
+									"});\r",
+									"\r",
+									"pm.collectionVariables.set(\"orderID\", response.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "810fddeb-6da7-4e4c-818f-3a2374177461",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerName\": \"{{$randomFullName}}\",\n  \"products\": [\n    {\n      \"id\": {{productId}},\n      \"quantity\": 1\n    },\n    {\n      \"id\": 2002,\n      \"quantity\": 3\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/orders",
+						"description": "Place a new order by providing customer details and ordered products"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "abf31b85-8238-4471-8895-5c40145ec8fa",
+								"exec": [
+									"// Assignment #2 Task 1\r",
+									"// Using pm.expect() write a status code test for all the requests in the collection.\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.code).to.eql(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "17b7d7bd-44df-4fd0-a29f-1b0378ac7606",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "Get an order by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bd87b506-ba7d-49bb-b24d-1fbdb70d72b0",
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"// Assignment #2 Task 1\r",
+									"// Using pm.expect() write a status code test for all the requests in the collection.\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.code).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"// Assignment #3 Task 1\r",
+									"// Write an assertion to verify that the response is in JSON format.\r",
+									"pm.test(\"Response body is JSON\", function(){\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"// Assignment #3 Task 2\r",
+									"// Write a test with two assertions to verify the following:\r",
+									"// The existence of the property \"id\" in the response.\r",
+									"// The value of the \"id\" property matches the regular expression pattern: ^[A-Z0-9]{9}$.\r",
+									"pm.test(\"Property ID\", function(){\r",
+									"    pm.expect(response).to.have.property(\"id\");\r",
+									"    pm.expect(response.id).to.match(/^[A-Z0-9]{9}$/);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"// Assignment #3 Task 3\r",
+									"// Write a test with two assertions to verify the following:\r",
+									"// The existence of the property \"products\" in the response.\r",
+									"// The value of the \"products\" property is an array.\r",
+									"pm.test(\"Property Products\", function(){\r",
+									"    pm.expect(response).to.have.property(\"products\");\r",
+									"    pm.expect(response.products).to.be.a(\"array\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "41bb7954-653c-4ad0-b3dd-edb2e2a49d96",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "81bc1501-f03f-41bf-ace2-d89ab882686a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/orders/:orderId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "{{orderID}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a3a3b9d5-d10d-43e3-b823-f8fc2241f47b",
+							"name": "The requested order",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/orders/:orderId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{}"
+						}
+					]
+				}
+			],
+			"id": "5aa0214e-e558-4cb8-8f98-7e9baf640d86",
+			"auth": {
+				"type": "apikey",
+				"apikey": {
+					"value": "{{apiKey}}",
+					"key": "x-api-key"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b8752179-9a43-4bbe-96de-c2b5af9b5f9e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "aa2c609f-4f7c-41e8-950a-067920584e9e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cab72660-4a0a-468f-b225-0f7d34f13e28",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0dd66905-277f-47f3-a75f-bcc2d0f1ce7d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://valentinos-coffee.glitch.me",
+			"disabled": true
+		},
+		{
+			"key": "apiKey",
+			"value": "ENTER A VALID API KEY"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://valentinos-coffee.herokuapp.com",
+			"type": "string"
+		},
+		{
+			"key": "productId",
+			"value": "1001"
+		},
+		{
+			"key": "orderID",
+			"value": "4HHCDIUI1"
+		}
+	]
+}
