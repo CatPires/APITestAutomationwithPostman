@@ -3,7 +3,9 @@
 		"_postman_id": "1356073c-c3eb-4b4a-9f1e-a810d95fcea7",
 		"name": "✅ Assignment #1",
 		"description": "## Instructions for Assignment #1\n\n1. **Get the challenge:** Fork the parent collection to your own public workspace.\n2. **Read the instructions:** You will find the tasks you need to complete below.\n3. **Verify your solution:** Select the second folder `Check your solution` and follow the instructions in the documentation to validate your solution.\n    \n\n## Tasks\n\n### Task 1\n\nAdd to the request \"**Get API status**\" a Postman test that verifies the status is 200.\n\nOnce you have established that the test is working as expected, duplicate the request and drag it inside the \"Assignment #1\" collection and put it in the \"API requests\" folder. Ensure the name of the request remains the same.\n\n### Task 2\n\nAdd to the request \"**Get single product**\" a script that parses the JSON response body. Log the value of the property \"product-description\" to the Postman console.\n\nOnce you have established that the script is working as expected, duplicate the request and drag it inside the \"Assignment #1\" collection and put it in the \"API requests\" folder. Ensure the name of the request remains the same.\n\n### Task 3\n\nAdd to the request \"**Create a new order**\" a script that parses the JSON response body and sets a Postman variable named `orderId` with the id of the order that was just created.\n\nOnce you have established that the script is working as expected, duplicate the request and drag it inside the \"Assignment #1\" collection and put it in the \"API requests\" folder. Ensure the name of the request remains the same.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19720747",
+		"_collection_link": "https://www.postman.com/catarina-1ksnzg30x6j2e/workspace/api-automation-course/collection/19720747-1356073c-c3eb-4b4a-9f1e-a810d95fcea7?action=share&source=collection_link&creator=19720747"
 	},
 	"item": [
 		{
@@ -15,7 +17,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1302db04-2811-486f-bfd3-bbe229a9df38",
 								"exec": [
 									"// Task 1\r",
 									"// Add to the request \"Get API status\" a Postman test that verifies the status is 200.\r",
@@ -28,14 +29,18 @@
 							}
 						}
 					],
-					"id": "d1387ecd-9511-4c2f-8846-6d4f92bd7cb8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseUrl}}/status"
+						"url": {
+							"raw": "{{baseUrl}}/status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"status"
+							]
+						}
 					},
 					"response": []
 				},
@@ -45,7 +50,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "a3b51183-a6f5-466a-9d97-6f6cd6718710",
 								"exec": [
 									""
 								],
@@ -56,7 +60,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0cb74168-630c-485e-8116-f07f9cf01f1b",
 								"exec": [
 									"// Task 2\r",
 									"// Add to the request \"Get single product\" a script that parses the JSON response body. \r",
@@ -69,10 +72,6 @@
 							}
 						}
 					],
-					"id": "86a90e89-d7af-417f-b379-a56d6459c5dc",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -92,7 +91,6 @@
 							],
 							"variable": [
 								{
-									"id": "2323c3fb-95b6-40fd-954e-3779fc6a286e",
 									"key": "productId",
 									"value": "{{productId}}"
 								}
@@ -108,7 +106,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "85471839-6f0c-4fd4-af5d-149160cb7fed",
 								"exec": [
 									"// Task 3\r",
 									"// Add to the request \"Create a new order\" a script that parses the JSON response body\r",
@@ -121,10 +118,6 @@
 							}
 						}
 					],
-					"id": "bf38e12e-062e-43b7-9f9e-42215c342278",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "POST",
 						"header": [
@@ -147,13 +140,20 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/orders",
+						"url": {
+							"raw": "{{baseUrl}}/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders"
+							]
+						},
 						"description": "Place a new order by providing customer details and ordered products"
 					},
 					"response": []
 				}
-			],
-			"id": "a3ff1249-1753-4c4d-842e-271c4a8b59c0"
+			]
 		},
 		{
 			"name": "Check your solution",
@@ -164,7 +164,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a17c8640-d0ab-4150-a5c9-8a3960aa3d22",
 								"exec": [
 									"let collection = pm.response.json().collection",
 									"",
@@ -241,7 +240,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "8797ea36-c2e2-45f5-a5e2-a2869ba54dd6",
 								"exec": [
 									""
 								],
@@ -249,18 +247,26 @@
 							}
 						}
 					],
-					"id": "7c0890ce-ea14-4666-8f44-49964299d36f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "apikey",
-							"apikey": {
-								"value": "",
-								"key": "X-API-Key",
-								"in": "header"
-							}
+							"apikey": [
+								{
+									"key": "value",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-API-Key",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [
@@ -290,7 +296,6 @@
 							],
 							"variable": [
 								{
-									"id": "5e4d3bdb-36b1-4370-a95d-a695f6dc7f09",
 									"key": "collectionId",
 									"value": "{{collection_uuid}}"
 								}
@@ -301,7 +306,6 @@
 					"response": []
 				}
 			],
-			"id": "6f988ab3-e1eb-444d-a65d-4b00e2d46192",
 			"description": "Open the request \"Verify your work\" and follow the instructions in the request documentation."
 		}
 	],
@@ -309,7 +313,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "5e1e450b-dcad-4bfe-8ba8-aed63b0a070d",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -319,7 +322,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "773620cf-5037-4132-9625-580df7ed8025",
 				"type": "text/javascript",
 				"exec": [
 					""

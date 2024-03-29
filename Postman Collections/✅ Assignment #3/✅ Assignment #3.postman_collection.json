@@ -3,7 +3,9 @@
 		"_postman_id": "000ef39b-d722-4863-9956-de56d93b067e",
 		"name": "✅ Assignment #3",
 		"description": "## Instructions for Assignment #3\n\n1. **Get the challenge:** Fork the parent collection to your own public workspace.\n2. **Read the instructions:** You will find the tasks you need to complete below.\n3. **Verify your solution:** Select the second folder `Check your solution` and follow the instructions in the documentation to validate your solution.\n    \n\n## Tasks\n\nAll of the following tasts refer to the request \"Get an order by ID\".\n\n### Task 1\n\nWrite an assertion to verify that the response is in JSON format.\n\n### Task 2\n\nWrite a test with two assertions to verify the following:\n\n- The existence of the property \"id\" in the response.\n- The value of the \"id\" property matches the regular expression pattern: `^[A-Z0-9]{9}$`.\n    \n\n### Task 3\n\nWrite a test with two assertions to verify the following:\n\n- The existence of the property \"products\" in the response.\n- The value of the \"products\" property is an array.\n    \n\n### Task 4\n\nOnce you have established that the tests are working as expected, duplicate request from the collection. Drag the request copy inside the \"Assignment #3\" collection and put them in the \"API requests\" folder. Ensure the name of the request remains the same.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19720747",
+		"_collection_link": "https://www.postman.com/catarina-1ksnzg30x6j2e/workspace/api-automation-course/collection/19720747-000ef39b-d722-4863-9956-de56d93b067e?action=share&source=collection_link&creator=19720747"
 	},
 	"item": [
 		{
@@ -15,7 +17,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bd87b506-ba7d-49bb-b24d-1fbdb70d72b0",
 								"exec": [
 									"// let response;\r",
 									"\r",
@@ -54,7 +55,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "41bb7954-653c-4ad0-b3dd-edb2e2a49d96",
 								"exec": [
 									""
 								],
@@ -63,10 +63,6 @@
 							}
 						}
 					],
-					"id": "da82fd37-7b52-48a0-a52c-2b0471f1c703",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -86,7 +82,6 @@
 							],
 							"variable": [
 								{
-									"id": "ab43775b-712b-4673-b20c-2fc5dd175710",
 									"key": "orderId",
 									"value": "{{orderID}}"
 								}
@@ -95,8 +90,7 @@
 					},
 					"response": []
 				}
-			],
-			"id": "426855dc-e861-4983-9cc7-75baa7073568"
+			]
 		},
 		{
 			"name": "Check your solution",
@@ -107,7 +101,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a17c8640-d0ab-4150-a5c9-8a3960aa3d22",
 								"exec": [
 									"let collection = pm.response.json().collection",
 									"",
@@ -175,7 +168,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "396410c1-9454-4073-822e-b125764ebfde",
 								"exec": [
 									""
 								],
@@ -183,18 +175,26 @@
 							}
 						}
 					],
-					"id": "c8309e26-16be-4eef-bbb6-3bb62dc8c2b6",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "apikey",
-							"apikey": {
-								"value": "",
-								"key": "X-API-Key",
-								"in": "header"
-							}
+							"apikey": [
+								{
+									"key": "value",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-API-Key",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [
@@ -224,7 +224,6 @@
 							],
 							"variable": [
 								{
-									"id": "f83d2c39-0e55-4ef1-bc03-7c5edfa8576a",
 									"key": "collectionId",
 									"value": "{{collection_uuid}}"
 								}
@@ -235,7 +234,6 @@
 					"response": []
 				}
 			],
-			"id": "a922b2e9-0a62-4f62-a60a-2ead7c9f4a04",
 			"description": "Open the request \"Verify your work\" and follow the instructions in the request documentation."
 		}
 	],
@@ -243,7 +241,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7149f01b-6e1f-4609-8a23-53fa992bf9f8",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -253,7 +250,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "616eb500-fbca-4282-9ca1-64391e3fc72d",
 				"type": "text/javascript",
 				"exec": [
 					""

@@ -3,7 +3,9 @@
 		"_postman_id": "103f7f0d-2518-4211-9596-9b35fff6faab",
 		"name": "Valentino Artisan Coffee House API",
 		"description": "An API for managing orders and products at a coffee place named Valentino's Artisan Coffee House.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19720747",
+		"_collection_link": "https://www.postman.com/catarina-1ksnzg30x6j2e/workspace/api-automation-course/collection/19720747-103f7f0d-2518-4211-9596-9b35fff6faab?action=share&source=collection_link&creator=19720747"
 	},
 	"item": [
 		{
@@ -15,7 +17,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "87dcf18c-055e-436c-977a-58670393c04c",
 								"exec": [
 									""
 								],
@@ -26,7 +27,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "57d19bac-0d46-4e22-9752-5043d66ef8b3",
 								"exec": [
 									"// Assignment #1 Task 1\r",
 									"// Add to the request \"Get API status\" a Postman test that verifies the status is 200.\r",
@@ -47,10 +47,6 @@
 							}
 						}
 					],
-					"id": "962a18d2-3833-4f8e-b684-2b72ec460797",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -59,17 +55,32 @@
 								"value": "application/json"
 							}
 						],
-						"url": "{{baseUrl}}/status",
+						"url": {
+							"raw": "{{baseUrl}}/status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"status"
+							]
+						},
 						"description": "Retrieve the current status of the API"
 					},
 					"response": [
 						{
-							"id": "a7de6d05-bfe3-4a6a-8891-74c1cd38ba23",
 							"name": "API status",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"url": "{{baseUrl}}/status"
+								"url": {
+									"raw": "{{baseUrl}}/status",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"status"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -77,18 +88,15 @@
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"enabled": true
+									"value": "application/json"
 								}
 							],
 							"cookie": [],
-							"responseTime": null,
 							"body": "{\n  \"status\": \"<string>\"\n}"
 						}
 					]
 				}
 			],
-			"id": "8f2c0dea-c9d9-47f2-b4aa-af43bb391915",
 			"description": "Get the status of the API."
 		},
 		{
@@ -100,7 +108,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fb6d2544-b33f-4a17-98a7-55d8e26ba8e8",
 								"exec": [
 									"// Assignment #2 Task 1\r",
 									"// Using pm.expect() write a status code test for all the requests in the collection.\r",
@@ -115,10 +122,6 @@
 							}
 						}
 					],
-					"id": "20c52560-9769-4f90-b2a6-94566de40bfb",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -137,9 +140,9 @@
 							],
 							"query": [
 								{
-									"description": "The page number to fetch",
 									"key": "page",
 									"value": "1",
+									"description": "The page number to fetch",
 									"disabled": true
 								},
 								{
@@ -158,7 +161,6 @@
 					},
 					"response": [
 						{
-							"id": "1821ef6a-d776-4dc3-a515-ca3bf8c858a0",
 							"name": "A list of products",
 							"originalRequest": {
 								"method": "GET",
@@ -173,9 +175,9 @@
 									],
 									"query": [
 										{
-											"description": "The page number to fetch",
 											"key": "page",
-											"value": "1"
+											"value": "1",
+											"description": "The page number to fetch"
 										}
 									]
 								}
@@ -186,12 +188,10 @@
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"enabled": true
+									"value": "application/json"
 								}
 							],
 							"cookie": [],
-							"responseTime": null,
 							"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"category\": \"<string>\",\n    \"name\": \"<string>\",\n    \"isAvailable\": \"<boolean>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"category\": \"<string>\",\n    \"name\": \"<string>\",\n    \"isAvailable\": \"<boolean>\"\n  }\n]"
 						}
 					]
@@ -202,7 +202,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "a3b51183-a6f5-466a-9d97-6f6cd6718710",
 								"exec": [
 									""
 								],
@@ -213,7 +212,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0cb74168-630c-485e-8116-f07f9cf01f1b",
 								"exec": [
 									"// Assignment #1 Task 2\r",
 									"// Add to the request \"Get single product\" a script that parses the JSON response body. \r",
@@ -271,10 +269,6 @@
 							}
 						}
 					],
-					"id": "5c4e7d53-f62c-469a-b11c-479c8c0b0791",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -303,7 +297,6 @@
 					},
 					"response": [
 						{
-							"id": "2cb64f6d-87b5-4e02-9111-bad6130c79b3",
 							"name": "A list of products",
 							"originalRequest": {
 								"method": "GET",
@@ -318,9 +311,9 @@
 									],
 									"query": [
 										{
-											"description": "The page number to fetch",
 											"key": "page",
-											"value": "1"
+											"value": "1",
+											"description": "The page number to fetch"
 										}
 									]
 								}
@@ -331,18 +324,15 @@
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"enabled": true
+									"value": "application/json"
 								}
 							],
 							"cookie": [],
-							"responseTime": null,
 							"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"category\": \"<string>\",\n    \"name\": \"<string>\",\n    \"isAvailable\": \"<boolean>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"category\": \"<string>\",\n    \"name\": \"<string>\",\n    \"isAvailable\": \"<boolean>\"\n  }\n]"
 						}
 					]
 				}
-			],
-			"id": "d7adb077-c213-4d33-814d-42adc06127d8"
+			]
 		},
 		{
 			"name": "clients",
@@ -353,7 +343,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3baad36b-1e40-478d-a83f-43cf4f1ff188",
 								"exec": [
 									"// Assignment #2 Task 1\r",
 									"// Using pm.expect() write a status code test for all the requests in the collection.\r",
@@ -373,10 +362,6 @@
 							}
 						}
 					],
-					"id": "b789b9b6-32c1-48c3-97d9-02e394e9ed29",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "POST",
 						"header": [
@@ -393,12 +378,19 @@
 							"mode": "raw",
 							"raw": "{\n    \"email\": \"{{$randomExampleEmail}}\"\n}"
 						},
-						"url": "{{baseUrl}}/clients",
+						"url": {
+							"raw": "{{baseUrl}}/clients",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clients"
+							]
+						},
 						"description": "Register a new API client by providing an email address"
 					},
 					"response": [
 						{
-							"id": "3bba8bb2-27f2-41db-9b6a-2ee4c5575cfc",
 							"name": "Client registered",
 							"originalRequest": {
 								"method": "POST",
@@ -418,7 +410,15 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}/clients"
+								"url": {
+									"raw": "{{baseUrl}}/clients",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clients"
+									]
+								}
 							},
 							"status": "Created",
 							"code": 201,
@@ -426,18 +426,15 @@
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"enabled": true
+									"value": "application/json"
 								}
 							],
 							"cookie": [],
-							"responseTime": null,
 							"body": "{\n  \"value\": \"reference #/components/schemas/ApiClient not found in the OpenAPI spec\"\n}"
 						}
 					]
 				}
-			],
-			"id": "305900ae-37d4-46e5-9ff1-259bcd6f0cca"
+			]
 		},
 		{
 			"name": "orders",
@@ -448,7 +445,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "85471839-6f0c-4fd4-af5d-149160cb7fed",
 								"exec": [
 									"// Assignment #1 Task 3\r",
 									"// Add to the request \"Create a new order\" a script that parses the JSON response body\r",
@@ -471,10 +467,6 @@
 							}
 						}
 					],
-					"id": "810fddeb-6da7-4e4c-818f-3a2374177461",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "POST",
 						"header": [
@@ -497,7 +489,15 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/orders",
+						"url": {
+							"raw": "{{baseUrl}}/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders"
+							]
+						},
 						"description": "Place a new order by providing customer details and ordered products"
 					},
 					"response": []
@@ -508,7 +508,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "abf31b85-8238-4471-8895-5c40145ec8fa",
 								"exec": [
 									"// Assignment #2 Task 1\r",
 									"// Using pm.expect() write a status code test for all the requests in the collection.\r",
@@ -523,10 +522,6 @@
 							}
 						}
 					],
-					"id": "17b7d7bd-44df-4fd0-a29f-1b0378ac7606",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -535,7 +530,15 @@
 								"value": "application/json"
 							}
 						],
-						"url": "{{baseUrl}}/orders"
+						"url": {
+							"raw": "{{baseUrl}}/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
 					},
 					"response": []
 				},
@@ -545,7 +548,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bd87b506-ba7d-49bb-b24d-1fbdb70d72b0",
 								"exec": [
 									"const response = pm.response.json();\r",
 									"\r",
@@ -591,7 +593,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "41bb7954-653c-4ad0-b3dd-edb2e2a49d96",
 								"exec": [
 									""
 								],
@@ -600,10 +601,6 @@
 							}
 						}
 					],
-					"id": "81bc1501-f03f-41bf-ace2-d89ab882686a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -631,7 +628,6 @@
 					},
 					"response": [
 						{
-							"id": "a3a3b9d5-d10d-43e3-b823-f8fc2241f47b",
 							"name": "The requested order",
 							"originalRequest": {
 								"method": "GET",
@@ -662,25 +658,30 @@
 								}
 							],
 							"cookie": [],
-							"responseTime": null,
 							"body": "{}"
 						}
 					]
 				}
 			],
-			"id": "5aa0214e-e558-4cb8-8f98-7e9baf640d86",
 			"auth": {
 				"type": "apikey",
-				"apikey": {
-					"value": "{{apiKey}}",
-					"key": "x-api-key"
-				}
+				"apikey": [
+					{
+						"key": "value",
+						"value": "{{apiKey}}",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "x-api-key",
+						"type": "string"
+					}
+				]
 			},
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "b8752179-9a43-4bbe-96de-c2b5af9b5f9e",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -690,7 +691,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "aa2c609f-4f7c-41e8-950a-067920584e9e",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -704,7 +704,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "cab72660-4a0a-468f-b225-0f7d34f13e28",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -714,7 +713,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0dd66905-277f-47f3-a75f-bcc2d0f1ce7d",
 				"type": "text/javascript",
 				"exec": [
 					""

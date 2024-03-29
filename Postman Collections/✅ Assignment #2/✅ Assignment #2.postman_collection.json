@@ -3,7 +3,9 @@
 		"_postman_id": "b38fc68d-eaf1-4d21-bcb5-a6380cd7c4a9",
 		"name": "✅ Assignment #2",
 		"description": "## Instructions for Assignment #2\n\n1. **Get the challenge:** Fork the parent collection to your own public workspace.\n2. **Read the instructions:** You will find the tasks you need to complete below.\n3. **Verify your solution:** Select the second folder `Check your solution` and follow the instructions in the documentation to validate your solution.\n    \n\n## Tasks\n\n### Task 1\n\nUsing pm.expect() write a status code test for all the requests in the collection.\n\n### Task 2\n\nOnce you have established that the tests are working as expected, duplicate all the folders from the collection. Drag the folder copies inside the \"Assignment #2\" collection and put them in the \"API requests\" folder. Ensure the name of the request remains the same.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19720747",
+		"_collection_link": "https://www.postman.com/catarina-1ksnzg30x6j2e/workspace/api-automation-course/collection/19720747-b38fc68d-eaf1-4d21-bcb5-a6380cd7c4a9?action=share&source=collection_link&creator=19720747"
 	},
 	"item": [
 		{
@@ -18,7 +20,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "87dcf18c-055e-436c-977a-58670393c04c",
 										"exec": [
 											""
 										],
@@ -29,7 +30,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "57d19bac-0d46-4e22-9752-5043d66ef8b3",
 										"exec": [
 											"// Task 1\r",
 											"// Using pm.expect() write a status code test for all the requests in the collection.\r",
@@ -44,10 +44,6 @@
 									}
 								}
 							],
-							"id": "3ed52082-0dca-407d-8e7d-11231e64e06c",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -56,13 +52,20 @@
 										"value": "application/json"
 									}
 								],
-								"url": "{{baseUrl}}/status",
+								"url": {
+									"raw": "{{baseUrl}}/status",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"status"
+									]
+								},
 								"description": "Retrieve the current status of the API"
 							},
 							"response": []
 						}
 					],
-					"id": "233a08c4-d98d-4f83-912c-da73265ac105",
 					"description": "Get the status of the API."
 				},
 				{
@@ -74,7 +77,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "e12d804e-ea71-47aa-b7b6-f9bb72d578c1",
 										"exec": [
 											"// Task 1\r",
 											"// Using pm.expect() write a status code test for all the requests in the collection.\r",
@@ -89,10 +91,6 @@
 									}
 								}
 							],
-							"id": "96b6f749-ac18-4ec4-959c-509bb4c1c74e",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -111,9 +109,9 @@
 									],
 									"query": [
 										{
-											"description": "The page number to fetch",
 											"key": "page",
 											"value": "1",
+											"description": "The page number to fetch",
 											"disabled": true
 										},
 										{
@@ -138,7 +136,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "a3b51183-a6f5-466a-9d97-6f6cd6718710",
 										"exec": [
 											""
 										],
@@ -149,7 +146,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "0cb74168-630c-485e-8116-f07f9cf01f1b",
 										"exec": [
 											"// Task 1\r",
 											"// Using pm.expect() write a status code test for all the requests in the collection.\r",
@@ -164,10 +160,6 @@
 									}
 								}
 							],
-							"id": "6419810e-5cfb-4c77-aa76-e444bc3f4d4b",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -187,7 +179,6 @@
 									],
 									"variable": [
 										{
-											"id": "8df4b264-a32d-45a4-9371-aa9c11a295a6",
 											"key": "productId",
 											"value": "{{productId}}"
 										}
@@ -197,8 +188,7 @@
 							},
 							"response": []
 						}
-					],
-					"id": "cc944534-f4a0-4746-81a1-42b5bc0421d1"
+					]
 				},
 				{
 					"name": "clients",
@@ -209,7 +199,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "2049d191-d5f8-4bcb-b9de-c18f673058c3",
 										"exec": [
 											"// Task 1\r",
 											"// Using pm.expect() write a status code test for all the requests in the collection.\r",
@@ -224,10 +213,6 @@
 									}
 								}
 							],
-							"id": "6a4ded7f-a49b-40fb-aa15-fda1f1371d0a",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "POST",
 								"header": [
@@ -244,13 +229,20 @@
 									"mode": "raw",
 									"raw": "{\n    \"email\": \"{{$randomExampleEmail}}\"\n}"
 								},
-								"url": "{{baseUrl}}/clients",
+								"url": {
+									"raw": "{{baseUrl}}/clients",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"clients"
+									]
+								},
 								"description": "Register a new API client by providing an email address"
 							},
 							"response": []
 						}
-					],
-					"id": "42c96f33-30b1-4a5f-b788-a1b52bf39ee8"
+					]
 				},
 				{
 					"name": "orders",
@@ -261,7 +253,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "85471839-6f0c-4fd4-af5d-149160cb7fed",
 										"exec": [
 											"// Task 1\r",
 											"// Using pm.expect() write a status code test for all the requests in the collection.\r",
@@ -276,10 +267,6 @@
 									}
 								}
 							],
-							"id": "8a9739ab-3624-4274-911f-d0f92bfc8fe6",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "POST",
 								"header": [
@@ -302,7 +289,15 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}/orders",
+								"url": {
+									"raw": "{{baseUrl}}/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders"
+									]
+								},
 								"description": "Place a new order by providing customer details and ordered products"
 							},
 							"response": []
@@ -313,7 +308,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "776f6b98-810a-4ff6-be2a-470d70021bbc",
 										"exec": [
 											"// Task 1\r",
 											"// Using pm.expect() write a status code test for all the requests in the collection.\r",
@@ -328,7 +322,6 @@
 									}
 								}
 							],
-							"id": "9f6531d7-6287-4203-bbec-3c57605d5281",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -337,7 +330,15 @@
 										"value": "application/json"
 									}
 								],
-								"url": "{{baseUrl}}/orders"
+								"url": {
+									"raw": "{{baseUrl}}/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
 							},
 							"response": []
 						},
@@ -347,7 +348,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "bd87b506-ba7d-49bb-b24d-1fbdb70d72b0",
 										"exec": [
 											"// Task 1\r",
 											"// Using pm.expect() write a status code test for all the requests in the collection.\r",
@@ -364,7 +364,6 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "41bb7954-653c-4ad0-b3dd-edb2e2a49d96",
 										"exec": [
 											""
 										],
@@ -373,10 +372,6 @@
 									}
 								}
 							],
-							"id": "3f2d7a9f-470f-489f-a1ef-ac7d1239e037",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -396,7 +391,6 @@
 									],
 									"variable": [
 										{
-											"id": "13e36c38-f002-4314-9b6a-94618cefa931",
 											"key": "orderId",
 											"value": "{{orderID}}"
 										}
@@ -406,19 +400,25 @@
 							"response": []
 						}
 					],
-					"id": "e97d42f9-f283-4240-811e-5ce546fd1978",
 					"auth": {
 						"type": "apikey",
-						"apikey": {
-							"value": "{{apiKey}}",
-							"key": "x-api-key"
-						}
+						"apikey": [
+							{
+								"key": "value",
+								"value": "{{apiKey}}",
+								"type": "string"
+							},
+							{
+								"key": "key",
+								"value": "x-api-key",
+								"type": "string"
+							}
+						]
 					},
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "b8752179-9a43-4bbe-96de-c2b5af9b5f9e",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -428,7 +428,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "aa2c609f-4f7c-41e8-950a-067920584e9e",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -437,8 +436,7 @@
 						}
 					]
 				}
-			],
-			"id": "17fe836f-6b39-40fd-bfd9-4e678de13b10"
+			]
 		},
 		{
 			"name": "Check your solution",
@@ -449,7 +447,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a17c8640-d0ab-4150-a5c9-8a3960aa3d22",
 								"exec": [
 									"let collection = pm.response.json().collection",
 									"",
@@ -600,24 +597,31 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "17d99ba2-ecc7-4d1e-8fea-c8e72e561929",
 								"exec": [],
 								"type": "text/javascript"
 							}
 						}
 					],
-					"id": "826cd724-3847-4c6b-b0be-b01ec46864e3",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "apikey",
-							"apikey": {
-								"value": "",
-								"key": "X-API-Key",
-								"in": "header"
-							}
+							"apikey": [
+								{
+									"key": "value",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-API-Key",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [
@@ -647,7 +651,6 @@
 							],
 							"variable": [
 								{
-									"id": "f83d2c39-0e55-4ef1-bc03-7c5edfa8576a",
 									"key": "collectionId",
 									"value": "{{collection_uuid}}"
 								}
@@ -658,7 +661,6 @@
 					"response": []
 				}
 			],
-			"id": "c6bf57d0-3667-4596-be73-f3aec2d19ded",
 			"description": "Open the request \"Verify your work\" and follow the instructions in the request documentation."
 		}
 	],
@@ -666,7 +668,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b71f4ab9-76cc-45da-9615-250b64eadde3",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -676,7 +677,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "67cba8d9-54f5-4729-aad6-561acb2b7d57",
 				"type": "text/javascript",
 				"exec": [
 					""
